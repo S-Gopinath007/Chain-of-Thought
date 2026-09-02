@@ -3,8 +3,11 @@ import re
 import subprocess
 import sys
 
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+
+load_dotenv()
 
 from environment import setup_sandbox
 from prompts import SYSTEM_INSTRUCTION, TASK_QUERY
@@ -21,7 +24,7 @@ def run_agent_inference(api_key, system_prompt, query_prompt, feedback_history):
         )
 
     response = client.models.generate_content(
-        model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
+        model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash"),
         contents=contents,
         config=types.GenerateContentConfig(
             system_instruction=system_prompt,
