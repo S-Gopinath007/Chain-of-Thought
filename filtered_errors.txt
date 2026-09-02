@@ -1,0 +1,2 @@
+CRITICAL: Database connection lost
+FATAL: Memory corruption at segment 0x4F
