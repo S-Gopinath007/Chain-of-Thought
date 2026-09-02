@@ -30,24 +30,7 @@ structured process:
    - Briefly explain how the code satisfies the requirements.
    - Do not expose private chain-of-thought or hidden reasoning.
    - Provide only concise summaries of the reasoning stages.
-
-OUTPUT FORMAT:
-
-### REQUIREMENTS
-[concise requirements]
-
-### PLAN
-[concise plan]
-
-### PSEUDOCODE
-[concise pseudocode]
-
-### VERIFICATION
-[constraint-by-constraint verification]
-
-### CODE
-```python
-[verified Python code]"""
+"""
 
 TASK_QUERY = """
 Task Objective:

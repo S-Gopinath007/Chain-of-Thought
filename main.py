@@ -10,7 +10,7 @@ from google.genai import types
 load_dotenv()
 
 from environment import setup_sandbox
-from prompts import SYSTEM_INSTRUCTION, TASK_QUERY
+from prompts import SYSTEM_INSTRUCTION #TASK_QUERY
 
 
 def run_agent_inference(api_key, system_prompt, query_prompt, feedback_history):
@@ -46,6 +46,7 @@ def parse_generated_code(response_text):
 
 def main():
     api_key = os.getenv("GEMINI_API_KEY")
+    task_query = input("\nEnter your task_query: ").strip()
     if not api_key:
         print("Error: GEMINI_API_KEY is not set.", file=sys.stderr)
         sys.exit(1)
@@ -66,8 +67,8 @@ def main():
         final_response = run_agent_inference(
             api_key,
             SYSTEM_INSTRUCTION,
-            TASK_QUERY,
-            feedback_history,
+            task_query,
+            feedback_history
         )
 
         extracted_code = parse_generated_code(final_response)
@@ -120,3 +121,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
